@@ -1,0 +1,108 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-other {
+  @media (max-width: $breakpoint-md) {
+    margin-top: 80px;
+  }
+
+  & .decor-bg {
+    width: 100%;
+    max-width: 402px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    @media (max-width: $breakpoint-md) {
+      max-width: 286px;
+      right: -15px;
+      transform: none;
+    }
+  }
+
+  &__content {
+    padding-left: 20px;
+    @media (max-width: $breakpoint-md) {
+      padding-left: 12px;
+    }
+  }
+
+  &__inner {
+    height: 100vh;
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row-reverse;
+
+    }
+    @media (max-width: $breakpoint-md) {
+      height: auto;
+    }
+  }
+
+  & .img {
+    width: 100%;
+    max-width: 380px;
+    @media (max-width: $breakpoint-md) {
+      max-width: 260px;
+    }
+    @media (max-width: 400px) {
+      max-width: 220px;
+    }
+    margin: 0 auto;
+  }
+
+  & .heading {
+    @include fontSize(32, 64);
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 14px;
+    }
+  }
+
+  & .description {
+    @include fontSize(20, 32);
+    margin-bottom: 31px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 13px;
+    }
+  }
+
+  & .btn-primary {
+    margin: 0 auto;
+  }
+
+  &.thanks {
+    & .heading {
+      margin-bottom: 6px;
+    }
+  }
+
+  &.error {
+    & .heading {
+      margin-bottom: 30px;
+
+    }
+  }
+
+
+}
+
+.content-error, .content-thanks {
+  & img {
+    margin: 0 auto;
+  }
+
+  & .heading {
+    @include fontSize(32, 64);
+  }
+
+  & .description {
+    @include fontSize(20, 32);
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 6px;
+  }
+
+  & .btn {
+    margin-top: 30px;
+  }
+}

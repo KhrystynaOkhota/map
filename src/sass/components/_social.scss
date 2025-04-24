@@ -1,0 +1,58 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.social {
+  &__list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+
+    &:not(.--horizontal) {
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+
+      & .social {
+        &__item {
+          &:not(&:last-child) {
+            margin-right: 12px;
+            @media (max-width: $breakpoint-md) {
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &__item {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 100%;
+
+    @media (max-width: $breakpoint-md) {
+
+    }
+
+    & i {
+      color: $whiteColor;
+      @include fontSize(18, 22);
+      @include transition(.4);
+    }
+
+    & a {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      & i {
+        color: $accentColor;
+      }
+    }
+  }
+}
+

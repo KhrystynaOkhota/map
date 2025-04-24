@@ -1,0 +1,147 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.s-grid {
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &__wrap {
+      position: relative;
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.s-image {
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &__wrap {
+      position: relative;
+      padding-bottom: 62%;
+    }
+  }
+}
+
+.s-video {
+  & .btn-pulse {
+    bottom: 50px;
+    right: 50px;
+    @media (max-width: $breakpoint-md) {
+      right: auto;
+      bottom: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+}
+
+.preload {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+
+  &__wrap {
+
+    position: relative;
+    padding-bottom: 50%;
+    overflow: hidden;
+
+    & video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      position: absolute;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  .btn-play {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 160px;
+    height: 160px;
+    z-index: 6;
+    cursor: pointer;
+  }
+}
+
+
+.s-cta {
+  &__top {
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    background-color: #D8D6D1;
+    padding: 20px;
+    @media (max-width: $breakpoint-md) {
+      padding: 12px 12px 0 12px;
+    }
+  }
+
+}
+
+.s-project {
+  & .heading {
+    margin-bottom: 18px;
+  }
+}
+
+.s-download {
+  & .heading {
+    @media (max-width: 600px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__inner {
+    padding: 20px;
+    background-color: #D8D6D1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+      text-align: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    @media (max-width: 360px) {
+      padding: 20px;
+    }
+  }
+
+}

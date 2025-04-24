@@ -1,0 +1,138 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.pagination {
+  width: 100%;
+  background-color: transparent;
+
+  &-container {
+    //  padding: 100px 0 150px 0;
+    @media (max-width: $breakpoint-lg) {
+      //   padding-bottom: 100px;
+    }
+  }
+
+  & .screen-reader-text {
+    display: none;
+  }
+
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  & .nav-links {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .page-numbers {
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+     @include fontSize(12,18);
+      font-weight: 300;
+      text-align: center;
+      color: #242424;
+      width: 48px;
+      height: 48px;
+
+      border-radius: 100%;
+      cursor: pointer;
+      @include transition(.4);
+      @media (max-width: $breakpoint-lg) {
+        width: 40px;
+        height: 40px;
+      }
+      @media (max-width: $breakpoint-sm) {
+        width: 30px;
+        height: 30px;
+      }
+      & i {
+        @include fontSize(12, 14);
+      }
+
+      &:not(&.prev,&.next) {
+        margin: 0 6px;
+        @media (max-width: $breakpoint-lg) {
+          margin: 0 5px;
+        }
+      }
+
+      &.next, &.prev {
+        & img {
+          width: 30px;
+          @include transition(.5);
+          transform: translateX(0);
+          @media (max-width: $breakpoint-sm) {
+            width: 20px;
+
+          }
+        }
+
+
+      }
+
+      &.next {
+        &:hover {
+          & img {
+            transform: translateX(10px);
+          }
+        }
+      }
+
+      &.prev {
+        &:hover {
+          & img {
+            transform: translateX(-10px);
+          }
+        }
+      }
+
+      &.prev {
+        transform: rotate(-90deg);
+        margin-right: 30px;
+        @media (max-width: $breakpoint-lg) {
+          margin-right: 5px;
+        }
+      }
+
+      &.next {
+        transform: rotate(90deg);
+        margin-left: 30px;
+        @media (max-width: $breakpoint-lg) {
+          margin-left: 5px;
+        }
+      }
+
+      &.current {
+        color: #b46650;
+        font-weight: bold;
+
+      }
+
+      &:not(.next,.prev):hover {
+        color: #b46650;
+      }
+    }
+  }
+}
