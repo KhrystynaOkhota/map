@@ -463,7 +463,6 @@ jQuery(function ($) {
       },
       streetViewControl: false,
       fullscreenControl: false,
-      styles: mapStyles,
       minZoom: 2,
     };
 
